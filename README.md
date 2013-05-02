@@ -1,2 +1,1 @@
-# Lucky Charms [![Build Status](https://travis-ci.org/drapergeek/luckycharms.png)](https://travis-ci.org/drapergeek/luckycharms)
-
+# Lucky Charms [![Build Status](https://travis-ci.org/drapergeek/luckycharms.png)](https://travis-ci.org/drapergeek/luckycharms) [![Code Climate](https://codeclimate.com/github/drapergeek/luckycharms.png)](https://codeclimate.com/github/drapergeek/luckycharms)
