@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: luckycharms_development
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: luckycharms_test
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: luckycharms_production
+  host: localhost
