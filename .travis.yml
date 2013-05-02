@@ -5,9 +5,6 @@ before_script:
   - psql -c 'create database luckycharms_test;' -U postgres
   - bundle exec rake db:migrate db:test:load
 notifications:
-  campfire:
-    rooms:
-      - secure: "bL1NdMdIX88m8OcUqR0UA/8OJw5nqDCBJqCmox/PnlvEcxtKDjNvQqcvnT02\nvMCEznwrewYcG1OaoKMWEqytV0tJcmP5wsn5vdhrkJ9tyeqK1tcZ8Gr403w3\nqIX0YFQpdfY7feAmPLc2P/b8DHuTgoh7/CFHZfLVfc5gKId4x/E="
-    email:
-      on_success: change
-      on_failure: always
+  email:
+    on_success: change
+    on_failure: always
