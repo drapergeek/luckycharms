@@ -16,6 +16,10 @@ class Unit < ActiveRecord::Base
     self.update_attribute(:last_checked_in_at, Time.now)
   end
 
+  def set_current_url(new_url)
+    self.update_attribute(:current_url, new_url)
+  end
+
   private
 
   def create_api_key

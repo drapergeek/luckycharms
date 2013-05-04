@@ -40,4 +40,14 @@ describe Unit do
       expect(unit.last_checked_in_at).to be_within(1.minute).of(Time.now)
     end
   end
+
+  describe "#set_current_url" do
+    it 'will update current_url' do
+      unit = create(:unit)
+      unit.set_current_url('http://www.google.com')
+      unit.reload
+
+      expect(unit.current_url).to eq('http://www.google.com')
+    end
+  end
 end
