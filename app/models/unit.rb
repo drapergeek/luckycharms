@@ -12,6 +12,9 @@ class Unit < ActiveRecord::Base
     end
   end
 
+  def check_in
+    self.update_attribute(:last_checked_in_at, Time.now)
+  end
 
   private
 

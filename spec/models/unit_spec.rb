@@ -30,4 +30,14 @@ describe Unit do
       end
     end
   end
+
+  describe "#check_in" do
+    it 'will update last_checked_in_at' do
+      unit = create(:unit)
+      unit.check_in
+      unit.reload
+
+      expect(unit.last_checked_in_at).to be_within(1.minute).of(Time.now)
+    end
+  end
 end

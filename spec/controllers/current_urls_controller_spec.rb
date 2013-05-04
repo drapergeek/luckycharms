@@ -8,6 +8,7 @@ describe CurrentUrlsController do
         get :show, unit_id: unit.api_key
 
         expect(JSON.parse(response.body)["current_url"]).to eq('http://blah.com')
+        expect(Unit.last.last_checked_in_at).to be_within(1.minute).of(Time.now)
       end
     end
 
