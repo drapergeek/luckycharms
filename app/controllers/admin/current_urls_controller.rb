@@ -1,4 +1,4 @@
-class Admin::Api::CurrentUrlsController < Admin::ApiController
+class Admin::CurrentUrlsController < AdminController
   respond_to :json
 
   def create

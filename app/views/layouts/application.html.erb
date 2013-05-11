@@ -11,8 +11,11 @@
       <div class="container">
         <%= link_to 'Lucky Charms', root_path, class: 'brand' %>
         <ul class="nav">
+          <% if signed_in? %>
+            <li><%= link_to 'Bookmarks', admin_bookmarks_path %></li>
+          <% end %>
         </ul>
-        <%= render 'layouts/userpanel' %>
+        <%= render 'layouts/user_panel' %>
       </div>
     </div>
   </div>

@@ -22,6 +22,8 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'mocha'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :development, :test do
