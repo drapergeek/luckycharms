@@ -1,5 +1,6 @@
 class Admin::ApiController < ApplicationController
   before_filter :authorize_api!
+  protect_from_forgery with: :null_session
 
   protected
 
