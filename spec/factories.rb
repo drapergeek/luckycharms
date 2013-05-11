@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :bookmark do
     sequence(:name) { |n| "bookmark-#{n}" }
-    sequence(:url) { |n| "url-#{n}" }
+    sequence(:url) { |n| "http://url-#{n}.com" }
   end
 
   factory :unit do
