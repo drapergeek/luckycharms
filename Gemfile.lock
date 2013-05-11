@@ -28,6 +28,8 @@ GEM
     arel (4.0.0)
     atomic (1.1.8)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.3.1.0)
+      sass (~> 3.2)
     builder (3.1.4)
     clearance (1.0.0.rc7)
       bcrypt-ruby
@@ -53,6 +55,7 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    high_voltage (1.2.2)
     hike (1.2.2)
     i18n (0.6.4)
     jbuilder (1.0.2)
@@ -149,10 +152,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 2.3.1.0)
   clearance (= 1.0.0.rc7)
   coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl_rails
+  high_voltage
   jbuilder (~> 1.0.1)
   jquery-rails
   mocha
