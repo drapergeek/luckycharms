@@ -3,12 +3,24 @@
 <head>
   <title>Luckycharms</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to 'Lucky Charms', root_path, class: 'brand' %>
+        <ul class="nav">
+        </ul>
+        <%= render 'layouts/userpanel' %>
+      </div>
+    </div>
+  </div>
 
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>
 </html>
