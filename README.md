@@ -58,3 +58,10 @@ notified.
 * Ability to group units so that the same thing can be displayed easily on
   multiple units.
 * Ability to deactivate units if an API key is compromised.
+
+## Development Setup
+
+```
+  git clone git@github.com:drapergeek/luckycharms.git
+  ./bin/setup
+```
