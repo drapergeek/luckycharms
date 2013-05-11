@@ -16,11 +16,16 @@ namespace :dev do
     puts "Creating development data..."
 
     setup_bookmarks
+    setup_units
     setup_users
   end
 
   def setup_bookmarks
     create_list(:bookmark, 15)
+  end
+
+  def setup_units
+    create_list(:unit, 15)
   end
 
   def setup_users

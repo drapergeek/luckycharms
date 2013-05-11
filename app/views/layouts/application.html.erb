@@ -13,6 +13,7 @@
         <ul class="nav">
           <% if signed_in? %>
             <li><%= link_to 'Bookmarks', admin_bookmarks_path %></li>
+            <li><%= link_to 'Units', admin_units_path %></li>
           <% end %>
         </ul>
         <%= render 'layouts/user_panel' %>

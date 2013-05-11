@@ -1,0 +1,15 @@
+<h2>Units</h2>
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Current Url</th>
+    </tr>
+  </thead>
+  <% @units.each do |unit| %>
+    <tr>
+      <td><%= unit.name %></td>
+      <td><%= unit.current_url %></td>
+    </tr>
+  <% end %>
+</table>
