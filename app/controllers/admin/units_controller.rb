@@ -1,5 +1,5 @@
 class Admin::UnitsController < AdminController
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @units = Unit.all
