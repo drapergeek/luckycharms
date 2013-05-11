@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Admin::Api::CurrentUrlsController do
+  before do
+    request.env["HTTP_ACCEPT"] = 'application/json'
+  end
+
   describe '#create' do
     context 'when the user is not authenticated' do
       it 'responds with a forbidden' do
@@ -25,11 +29,11 @@ describe Admin::Api::CurrentUrlsController do
       end
 
       context 'when given a bookmark that does not exist' do
-        it 'will return 403 and an error message' do
+        it 'will return 422 and an error message' do
           unit = create(:unit)
           post :create, unit_id: unit.name, url: 'my link'
 
-          expect(response.response_code).to eq(403)
+          expect(response.response_code).to eq(422)
           expect(JSON.parse(response.body)["errors"]).to eq("The unit's url was not changed, please be sure that you provided a valid unit and boomark.")
         end
       end

@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe RegistrationsController do
+  before do
+    request.env["HTTP_ACCEPT"] = 'application/json'
+  end
+
   describe '#create' do
     context 'when the unit is not registered' do
       it 'stores the mac address and name' do
@@ -18,8 +22,8 @@ describe RegistrationsController do
         unit = create(:unit)
         post :create, mac_address: unit.mac_address, name: 'itouch2'
 
-        expect(response.response_code).to eq(403)
-        expect(JSON.parse(response.body)).to include("Unit is already registered.")
+        expect(response.response_code).to eq(422)
+        expect(JSON.parse(response.body)["errors"]).to include("Unit is already registered.")
       end
     end
 
@@ -27,7 +31,7 @@ describe RegistrationsController do
       it 'responds with a forbidden and an errors object' do
         post :create
 
-        expect(response.response_code).to eq(403)
+        expect(response.response_code).to eq(422)
         expect(JSON.parse(response.body)).not_to be_empty
       end
     end

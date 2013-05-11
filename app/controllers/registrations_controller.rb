@@ -3,10 +3,9 @@ class RegistrationsController < ApplicationController
 
   def create
     registration = Registration.new(unit)
-    if registration.save
-      render json: :success
-    else
-      render json: registration.errors, status: :forbidden
+
+    respond_with(registration, location: nil) do
+      registration.save
     end
   end
 
