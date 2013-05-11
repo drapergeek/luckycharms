@@ -10,14 +10,19 @@ describe Admin::Api::CurrentUrlsController do
       end
     end
 
-    it 'will update the current_url for the given unit' do
-      user = create(:user)
-      unit = create(:unit)
+    context 'with a valid user' do
+      before do
+        controller.stubs(:authorize_api!)
+      end
 
-      post :create, unit_id: unit.name, api_key: user.api_key, url: 'http://awesome.com'
+      it 'will update the current_url for the given unit' do
+        unit = create(:unit)
 
-      expect(response).to be_success
-      expect(Unit.last.current_url).to eq('http://awesome.com')
+        post :create, unit_id: unit.name, url: 'http://awesome.com'
+
+        expect(response).to be_success
+        expect(Unit.last.current_url).to eq('http://awesome.com')
+      end
     end
   end
 end
