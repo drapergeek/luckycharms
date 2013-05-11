@@ -5,11 +5,21 @@ class Admin::ApiController < ApplicationController
   protected
 
   def authorize_api!
+    unless user_authenticated?
+      deny_access
+    end
+  end
+
+  private
+
+  def deny_access
+    reset_session
+    render json: {}, status: :forbidden
+  end
+
+  def user_authenticated?
     if user = User.find_by_api_key(params[:api_key])
       sign_in(user)
-    else
-      reset_session
-      render json: {}, status: :forbidden
     end
   end
 end
