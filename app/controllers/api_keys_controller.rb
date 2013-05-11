@@ -2,7 +2,6 @@ class ApiKeysController < ApplicationController
   respond_to :json
 
   def show
-
     if unit.present? && unit.send_new_api_key?
       respond_with unit.reload
     else
