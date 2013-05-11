@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ApiKeysController do
-  before :each do
+  before do
     request.env["HTTP_ACCEPT"] = 'application/json'
   end
 
