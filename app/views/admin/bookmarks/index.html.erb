@@ -10,6 +10,11 @@
     <tr>
       <td><%= bookmark.name %></td>
       <td><%= bookmark.url %></td>
+      <td><%= link_to 'Delete',
+                      admin_bookmark_path(bookmark),
+                      method: :delete, confirm: 'Are you sure?',
+                      class: 'btn btn-mini btn-danger'%>
+      </td>
     </tr>
   <% end %>
 </table>

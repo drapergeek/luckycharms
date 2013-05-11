@@ -36,4 +36,15 @@ describe Admin::BookmarksController do
       expect(bookmarks[1]["name"]).to eq('ZZZZ')
     end
   end
+
+  describe "#delete" do
+    it 'will delete a bookmark' do
+      bookmark = create(:bookmark)
+
+      delete :destroy, id: bookmark.name
+
+      expect(response).to be_success
+      expect(Bookmark.find_by_id(bookmark.id)).to be_nil
+    end
+  end
 end

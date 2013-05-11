@@ -13,11 +13,6 @@ def create_units
   @units = create_list(:unit, 2)
 end
 
-def sign_in_with_backdoor
-  user = create(:user)
-  visit root_path(as: user)
-end
-
 def navigate_to_units
   click_on 'Units'
 end
