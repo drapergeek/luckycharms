@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe ApiKeysController do
+  before :each do
+    request.env["HTTP_ACCEPT"] = 'application/json'
+  end
+
   describe '#show' do
     context 'when you are allowed to retrieve an API key' do
       it 'returns an api key' do
