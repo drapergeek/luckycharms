@@ -1,8 +1,10 @@
 class CurrentUrlsController < ApplicationController
+  respond_to :json
+
   def show
     if unit
       unit.check_in
-      render json: { current_url: unit.current_url }
+      respond_with unit.reload
     else
       render json: {}, status: 403
     end

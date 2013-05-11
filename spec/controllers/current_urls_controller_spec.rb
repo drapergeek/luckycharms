@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe CurrentUrlsController do
+  before :each do
+    request.env["HTTP_ACCEPT"] = 'application/json'
+  end
+
   describe '#show' do
     context 'when the api_key is for a unit' do
       it 'returns the current_url for the unit' do

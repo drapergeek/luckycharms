@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Admin::Api::BookmarksController do
   before do
     controller.stubs(:authorize_api!)
+    request.env["HTTP_ACCEPT"] = 'application/json'
   end
 
   describe '#create' do
@@ -17,8 +18,10 @@ describe Admin::Api::BookmarksController do
     it 'returns a 403 and the error if the bookmark is invalid' do
       post :create
 
-      expect(response.response_code).to eq(403)
-      expect(JSON.parse(response.body)["name"]).to include("can't be blank")
+      expect(response.response_code).to eq(422)
+
+      json_response = JSON.parse(response.body)
+      expect(json_response["errors"]["name"]).to include("can't be blank")
     end
   end
 

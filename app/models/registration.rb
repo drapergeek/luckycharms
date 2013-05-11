@@ -1,4 +1,5 @@
 class Registration
+  include ActiveModel::Model
   delegate :save, to: :unit
 
   def initialize(unit)
@@ -12,7 +13,6 @@ class Registration
       unit.errors
     end
   end
-
 
   private
   attr_reader :unit
