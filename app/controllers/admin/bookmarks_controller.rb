@@ -1,9 +1,9 @@
-class Admin::Api::BookmarksController < Admin::ApiController
-  respond_to :json
+class Admin::BookmarksController < AdminController
+  respond_to :json, :html
 
   def index
-    bookmarks = Bookmark.all.order(:name)
-    respond_with bookmarks
+    @bookmarks = Bookmark.all.order(:name)
+    respond_with @bookmarks
   end
 
   def create
