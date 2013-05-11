@@ -8,7 +8,7 @@ Luckycharms::Application.routes.draw do
 
   namespace :admin do
     namespace :api do
-      resource :bookmarks, only: [:create]
+      resources :bookmarks, only: [:index, :create]
       resources :units, only: [] do
         resource :current_url, only: [:create]
       end

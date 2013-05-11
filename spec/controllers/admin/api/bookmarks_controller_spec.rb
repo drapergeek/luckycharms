@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe Admin::Api::BookmarksController do
-  describe '#create' do
-    before do
-      controller.stubs(:authorize_api!)
-    end
+  before do
+    controller.stubs(:authorize_api!)
+  end
 
+  describe '#create' do
     it 'will add a bookmarked url' do
       post :create, name: 'my link', url: 'http://awesome.com'
 
@@ -19,6 +19,18 @@ describe Admin::Api::BookmarksController do
 
       expect(response.response_code).to eq(403)
       expect(JSON.parse(response.body)["name"]).to include("can't be blank")
+    end
+  end
+
+  describe "#index" do
+    it 'will return a list of bookmarks sorted by name ascending' do
+      create(:bookmark, name: 'AAAA')
+      create(:bookmark, name: 'ZZZZ')
+      get :index
+
+      bookmarks = JSON.parse(response.body)
+      expect(bookmarks[0]["name"]).to eq('AAAA')
+      expect(bookmarks[1]["name"]).to eq('ZZZZ')
     end
   end
 end

@@ -1,4 +1,9 @@
 class Admin::Api::BookmarksController < Admin::ApiController
+  def index
+    bookmarks = Bookmark.all.order(:name)
+    render json: bookmarks
+  end
+
   def create
     bookmark = Bookmark.new(name: params[:name], url: params[:url])
     if bookmark.save
