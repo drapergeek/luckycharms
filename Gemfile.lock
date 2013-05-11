@@ -152,7 +152,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 2.3.1.0)
+  bootstrap-sass
   clearance (= 1.0.0.rc7)
   coffee-rails (~> 4.0.0)
   database_cleaner
