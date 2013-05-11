@@ -10,6 +10,7 @@
     <tr>
       <td><%= bookmark.name %></td>
       <td><%= bookmark.url %></td>
+      <td><%= link_to 'Delete', admin_bookmark_path(bookmark), method: :delete %></td>
     </tr>
   <% end %>
 </table>
