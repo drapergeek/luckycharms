@@ -1,4 +1,6 @@
 Luckycharms::Application.routes.draw do
+  root to: 'high_voltage/pages#show', id: 'welcome'
+
   resources :registrations, only: [:create]
   resources :api_keys, only: [:show]
 
