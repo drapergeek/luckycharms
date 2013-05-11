@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :bookmark do
+    sequence(:name) { |n| "bookmark-#{n}" }
+    sequence(:url) { |n| "http://url-#{n}.com" }
+  end
+
   factory :unit do
     sequence(:name) { |n| "unit-#{n}" }
     sequence(:mac_address) { |n| "00:00:00:00:00:0#{n}" }

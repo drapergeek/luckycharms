@@ -23,6 +23,16 @@ describe Admin::Api::CurrentUrlsController do
         expect(response).to be_success
         expect(Unit.last.current_url).to eq('http://awesome.com')
       end
+
+      context 'when given a bookmark that does not exist' do
+        it 'will return 403 and an error message' do
+          unit = create(:unit)
+          post :create, unit_id: unit.name, url: 'my link'
+
+          expect(response.response_code).to eq(403)
+          expect(JSON.parse(response.body)["errors"]).to eq("The unit's url was not changed, please be sure that you provided a valid unit and boomark.")
+        end
+      end
     end
   end
 end

@@ -17,7 +17,9 @@ class Unit < ActiveRecord::Base
   end
 
   def set_current_url(new_url)
-    self.update_attribute(:current_url, new_url)
+    if url = UrlManager.new(new_url).url
+      self.update_attribute(:current_url, url)
+    end
   end
 
   private

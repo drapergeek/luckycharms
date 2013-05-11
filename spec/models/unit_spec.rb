@@ -49,5 +49,25 @@ describe Unit do
 
       expect(unit.current_url).to eq('http://www.google.com')
     end
+
+    context 'given a string without http' do
+      it 'will set the url to the bookmark' do
+        bookmark = create(:bookmark, name: 'mylink')
+        unit = create(:unit)
+        unit.set_current_url(bookmark.name)
+        unit.reload
+
+        expect(unit.current_url).to eq(bookmark.url)
+      end
+
+      context 'when there is not a bookmark with that name' do
+        it 'will return false' do
+          unit = build_stubbed(:unit)
+          set_url = unit.set_current_url('non existant bookmark')
+
+          expect(set_url).to be_false
+        end
+      end
+    end
   end
 end
