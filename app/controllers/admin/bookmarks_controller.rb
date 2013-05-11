@@ -14,7 +14,7 @@ class Admin::BookmarksController < AdminController
   end
 
   def destroy
-    bookmark = Bookmark.find(params[:id])
+    bookmark = Bookmark.find_by_id_or_name(params[:id])
     respond_with(bookmark.destroy, location: admin_bookmarks_path)
   end
 end
