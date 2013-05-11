@@ -1,8 +1,16 @@
-class Admin::ApiController < ApplicationController
-  before_filter :authorize_api!
+class AdminController < ApplicationController
+  before_filter :authorize!
   protect_from_forgery with: :null_session
 
   protected
+
+  def authorize!
+    if request.format.json?
+      authorize_api!
+    else
+      authorize
+    end
+  end
 
   def authorize_api!
     unless user_authenticated?

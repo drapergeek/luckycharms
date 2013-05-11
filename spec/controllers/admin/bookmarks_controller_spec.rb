@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::Api::BookmarksController do
+describe Admin::BookmarksController do
   before do
     controller.stubs(:authorize_api!)
     request.env["HTTP_ACCEPT"] = 'application/json'

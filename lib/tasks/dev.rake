@@ -14,6 +14,16 @@ namespace :dev do
     DatabaseCleaner.clean
 
     puts "Creating development data..."
+
+    setup_bookmarks
+    setup_users
+  end
+
+  def setup_bookmarks
+    create_list(:bookmark, 15)
+  end
+
+  def setup_users
     user = create(:user, email: 'user@example.com')
     puts "User login: #{user.email} / #{user.password} / #{user.api_key}"
   end

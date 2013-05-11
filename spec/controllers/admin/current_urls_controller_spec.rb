@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::Api::CurrentUrlsController do
+describe Admin::CurrentUrlsController do
   before do
     request.env["HTTP_ACCEPT"] = 'application/json'
   end
