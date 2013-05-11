@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  units:
+    set_current_url:
+      error: "The unit's url was not changed, please be sure that you provided a valid unit and boomark."
