@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   include Clearance::User
   before_create :create_api_key
 
-
   private
 
   def create_api_key
