@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
 gem 'clearance', '1.0.0.rc7'
+gem 'airbrake', '3.1.8'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
