@@ -6,6 +6,7 @@ gem 'rails', '4.0.0.rc1'
 
 gem 'pg'
 gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'thin'
 gem 'high_voltage'
 gem 'bootstrap-sass'
 gem 'uglifier', '>= 1.3.0'
