@@ -26,6 +26,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.4)
+    airbrake (3.1.8)
+      activesupport
+      builder
+      json
     arel (4.0.0)
     atomic (1.1.8)
     bcrypt-ruby (3.0.1)
@@ -164,6 +168,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake (= 3.1.8)
   bootstrap-sass
   capybara
   clearance (= 1.0.0.rc7)
